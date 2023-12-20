@@ -4,13 +4,13 @@ from flask import jsonify, render_template
 from yacut import app, db
 
 
-@app.errorhandler(404)
+@app.errorhandler(HTTPStatus.NOT_FOUND)
 def page_not_found(error):
     """Обработчик ошибки 404."""
     return render_template('404.html'), HTTPStatus.NOT_FOUND
 
 
-@app.errorhandler(500)
+@app.errorhandler(HTTPStatus.INTERNAL_SERVER_ERROR)
 def internal_error(error):
     """Обработчик ошибки 500."""
     db.session.rollback()
