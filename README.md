@@ -35,3 +35,18 @@ python3 -m pip install --upgrade pip
 ```
 pip install -r requirements.txt
 ```
+
+Создать файл .env и наполнить его:
+
+```
+DATABASE_URI=<dialect+driver://username:password@host:port/database>
+FLASK_APP=yacut
+FLASK_ENV=development
+SECRET_KEY=<Ваш_секретный_ключ>
+```
+
+Запустить локально:
+
+```
+flask run
+```
